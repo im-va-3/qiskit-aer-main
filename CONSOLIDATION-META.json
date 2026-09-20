@@ -24,12 +24,10 @@
   "schema_version": "1.0",
   "snapshot": {
     "category": "05-quantum-computing-and-quantum-physics",
-    "copied_bytes": 11089175,
-    "copied_files": 657,
+    "copied_bytes": 11180365,
+    "copied_files": 686,
     "date": "2026-08-25",
-    "excluded_directories": [
-      "src/framework/results/data"
-    ],
+    "excluded_directories": [],
     "excluded_files": [],
     "folder": "qiskit-aer-main",
     "kind": "independent-code-snapshot",
