@@ -300,7 +300,10 @@ class TestAerStatevector(common.QiskitAerTestCase):
                 sv1 = sv1.data
             if not isinstance(sv2, np.ndarray):
                 sv2 = sv2.data
-            return np.isclose(np.cross(sv1, sv2), 0)
+            # Two two-component vectors are proportional exactly when their
+            # 2x2 determinant is zero.  np.cross no longer accepts 2D vectors
+            # in NumPy 2.0 and later.
+            return np.isclose(sv1[0] * sv2[1] - sv1[1] * sv2[0], 0)
 
         circuit = QuantumCircuit(1)
         circuit.h(0)
