@@ -168,3 +168,21 @@ If you use Qiskit, please cite as per the included [BibTeX file](https://github.
 ## License
 
 [Apache License 2.0](LICENSE.txt)
+
+
+## Step-by-step user guide
+
+1. **Install the CPU package.** In a Python environment run <code>python -m pip install qiskit-aer</code>. Install the compatible GPU package only on supported x86_64 Linux systems with the required CUDA version.
+2. **Run the README example.** Start Python, create an AerSimulator, and run the EstimatorV2 and SamplerV2 examples above. Compare expectation values and shot counts with an ideal statevector calculation for a small circuit.
+3. **Select a simulation method.** Choose statevector for pure states, density matrix for mixed/noisy states, unitary for gate-level evolution, or another documented method appropriate to circuit size and noise. Inspect the backend options supported by the installed build.
+4. **Add realistic noise.** Build or import a NoiseModel, attach errors to gates/readout, run repeated shots, and compare ideal versus noisy observables. Keep the noise assumptions and seed with the result.
+5. **Use primitives or backend jobs.** Use Estimator for expectation-value workflows and Sampler for bitstring distributions; use AerSimulator backend jobs when you need backend-specific results and save instructions.
+6. **Scale and troubleshoot.** Tune method, precision, shots, memory, parallelism, and GPU options. Verify CPU first, then follow the source-build guide for unsupported GPU platforms.
+
+### Functionality map
+
+- Qiskit circuit execution through AerSimulator and the Aer backend interface.
+- Statevector, density-matrix, unitary, stabilizer/other available simulation methods; exact methods depend on this checkout and installed build.
+- Estimator/Sampler primitives, configurable shot execution, noise models, simulator options, and GPU acceleration for supported methods.
+- See [docs](docs/), [tests](test/), and the [Aer API/reference documentation](https://qiskit.github.io/qiskit-aer/) for method compatibility, noise channels, result formats, and backend options.
+
